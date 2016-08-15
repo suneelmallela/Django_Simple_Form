@@ -1,0 +1,28 @@
+<html>
+
+	<head>
+		<title>Test</title>
+	</head>
+	<body>
+		{% if form.errors %}
+			<p style="coler: red;">
+				Please correct the error {{ form.errors | pluralize }} below.
+			</p>
+		{% endif %}
+
+		<form action="" method="post">
+			{% csrf_token %}
+			<div class='field'>
+				{{ form.vmid.error }}
+				<label for="id_vmid">VMID:</lable>
+				{{ form.vmid }}
+			</div>
+			<div class="field">
+				{{ form.vmstate.errors }}
+				<label for="id_vmstate">State:</lable>
+				{{ form.vmstate }}
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
